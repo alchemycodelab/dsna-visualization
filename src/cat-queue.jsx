@@ -3,6 +3,7 @@ import React from 'react'
 export default (CatImage, listClassName) => {
   const CatQueue = (props) => {
     return <section>
+      Petting queue!
       <button
         onClick={
           props.addCat.bind(

@@ -37,8 +37,8 @@ const Foods = foodsFn(
   listItemStyles['food'],
 )
 
-const toggleState = (set, state) => {
-  set(!state)
+const forceState = (set, state) => {
+  set(state)
 }
 
 const randomInt = (max) => {
@@ -146,16 +146,15 @@ export default () => {
     }
     return <>
       <CatQueue {...catQueueProps} />
-      { cats.length > 0 ?
+      <div style={{display: cats.length > 0 ? 'block' : 'none'}}>
         <BlendButton
           onClick={blendCat}
-          onMouseOver={toggleState.bind(null, setBlendHovered, blendHovered)}
-          onMouseLeave={toggleState.bind(null, setBlendHovered, blendHovered)}
+          onMouseOver={forceState.bind(null, setBlendHovered, true)}
+          onMouseLeave={forceState.bind(null, setBlendHovered, false)}
         >
           { blendHovered ? 'blend' : 'pet' } {cats[0]?.name}
         </BlendButton>
-        : ''
-      }
+      </div>
       <Foods foods={foods}/>
     </>
   }
