@@ -105,7 +105,7 @@ const cattributes = {
     'Alyst',
     'Apult',
     'Astrophe',
-    'Ategory',
+    'Tegory',
     'Cher',
     'Eracts',
     'Erpillar',
