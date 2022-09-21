@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default (CatImage, listClassName) => {
+export default (AddCatButton, CatImage, listClassName) => {
   const CatQueue = (props) => {
     return <section>
-      Petting queue!
-      <button
+      <div>Petting queue!</div>
+      <AddCatButton
         onClick={
           props.addCat.bind(
             null,
@@ -16,7 +16,7 @@ export default (CatImage, listClassName) => {
         }
       >
         add cat
-      </button>
+      </AddCatButton>
         <ol className={listClassName}>
         {props.cats.map((cat) => {
           return <CatImage cat={cat} key={cat.number} />

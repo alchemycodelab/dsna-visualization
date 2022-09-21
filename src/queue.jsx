@@ -22,12 +22,14 @@ import soupImage from './soup.svg'
 import steakImage from './steak.svg'
 import stewImage from './stew.svg'
 
+const AddCatButton = buttonFn(buttonStyles['add-cat'])
 const BlendButton = buttonFn(buttonStyles.blend)
 const CatImage = catImageFn(
   listItemStyles['cat'],
   imageStyles['cat-list-item'],
 );
 const CatQueue = catQueueFn(
+  AddCatButton,
   CatImage,
   listStyles['cat-queue'],
   listItemStyles['cat'],
