@@ -1,6 +1,7 @@
 {
   "short_name": "React App",
   "name": "Create React App Sample",
+  "homepage": "https://alchemycodelab.github.io/dsna-visualization",
   "icons": [
     {
       "src": "favicon.ico",
