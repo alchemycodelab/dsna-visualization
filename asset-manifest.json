@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.edf91cb2.css",
-    "main.js": "/static/js/main.3ef090ba.js",
-    "static/js/787.9e7abc57.chunk.js": "/static/js/787.9e7abc57.chunk.js",
-    "static/media/bento.svg": "/static/media/bento.18aa7517b12bebf63c55e3ab392bb0ec.svg",
-    "static/media/cat-wikimedia-commons-01.svg": "/static/media/cat-wikimedia-commons-01.03f4ebcfa07e9fcbb6015841ada4c37f.svg",
-    "static/media/salad.svg": "/static/media/salad.d228d5a6deac30533d35dba2954a0703.svg",
-    "static/media/ramen.svg": "/static/media/ramen.63d9dc1d4d8a33fa82b2ba6255a9c3d5.svg",
-    "static/media/bacon.svg": "/static/media/bacon.ef6acf994e732322672c4e8cccd50402.svg",
-    "static/media/stew.svg": "/static/media/stew.2e198ca30ae427d5a5bcc5451f52e99d.svg",
-    "static/media/steak.svg": "/static/media/steak.bb8179cedde8542d000577be3daeb785.svg",
-    "static/media/pita.svg": "/static/media/pita.aa6b0849b46a98538271c97fbca0e6d3.svg",
-    "static/media/nigiri.svg": "/static/media/nigiri.adedeb656806deec763c3443c679370c.svg",
-    "static/media/soup.svg": "/static/media/soup.b09821db6caa951369eb7a7a122fc503.svg",
-    "static/media/burrito.svg": "/static/media/burrito.4e13ce6d78900b1998f74c9e2bbecdd4.svg",
-    "static/media/kebab.svg": "/static/media/kebab.c7907e520768c80b8b99351b42743208.svg",
-    "static/media/meat-on-bone.svg": "/static/media/meat-on-bone.f6d2e7d2c48f886209e2044d48af9a18.svg",
-    "static/media/drumstick.svg": "/static/media/drumstick.274d190c1e35abec154d4db39fcc42f5.svg",
-    "index.html": "/index.html",
-    "main.edf91cb2.css.map": "/static/css/main.edf91cb2.css.map",
-    "main.3ef090ba.js.map": "/static/js/main.3ef090ba.js.map",
-    "787.9e7abc57.chunk.js.map": "/static/js/787.9e7abc57.chunk.js.map"
+    "main.css": "./static/css/main.edf91cb2.css",
+    "main.js": "./static/js/main.0f89cce6.js",
+    "static/js/787.9e7abc57.chunk.js": "./static/js/787.9e7abc57.chunk.js",
+    "static/media/bento.svg": "./static/media/bento.18aa7517b12bebf63c55e3ab392bb0ec.svg",
+    "static/media/cat-wikimedia-commons-01.svg": "./static/media/cat-wikimedia-commons-01.03f4ebcfa07e9fcbb6015841ada4c37f.svg",
+    "static/media/salad.svg": "./static/media/salad.d228d5a6deac30533d35dba2954a0703.svg",
+    "static/media/ramen.svg": "./static/media/ramen.63d9dc1d4d8a33fa82b2ba6255a9c3d5.svg",
+    "static/media/bacon.svg": "./static/media/bacon.ef6acf994e732322672c4e8cccd50402.svg",
+    "static/media/stew.svg": "./static/media/stew.2e198ca30ae427d5a5bcc5451f52e99d.svg",
+    "static/media/steak.svg": "./static/media/steak.bb8179cedde8542d000577be3daeb785.svg",
+    "static/media/pita.svg": "./static/media/pita.aa6b0849b46a98538271c97fbca0e6d3.svg",
+    "static/media/nigiri.svg": "./static/media/nigiri.adedeb656806deec763c3443c679370c.svg",
+    "static/media/soup.svg": "./static/media/soup.b09821db6caa951369eb7a7a122fc503.svg",
+    "static/media/burrito.svg": "./static/media/burrito.4e13ce6d78900b1998f74c9e2bbecdd4.svg",
+    "static/media/kebab.svg": "./static/media/kebab.c7907e520768c80b8b99351b42743208.svg",
+    "static/media/meat-on-bone.svg": "./static/media/meat-on-bone.f6d2e7d2c48f886209e2044d48af9a18.svg",
+    "static/media/drumstick.svg": "./static/media/drumstick.274d190c1e35abec154d4db39fcc42f5.svg",
+    "index.html": "./index.html",
+    "main.edf91cb2.css.map": "./static/css/main.edf91cb2.css.map",
+    "main.0f89cce6.js.map": "./static/js/main.0f89cce6.js.map",
+    "787.9e7abc57.chunk.js.map": "./static/js/787.9e7abc57.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.edf91cb2.css",
-    "static/js/main.3ef090ba.js"
+    "static/js/main.0f89cce6.js"
   ]
 }
