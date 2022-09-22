@@ -104,8 +104,10 @@ const cattributes = {
   },
   names: [
     'Aclysm',
+    'Acomb',
     'Alyst',
     'Apult',
+    'Atonic',
     'Astrophe',
     'Cher',
     'Egory',
@@ -113,10 +115,12 @@ const cattributes = {
     'Erpillar',
     'Hardic',
     'Hedral',
+    'Heter',
     'Hode',
     'Holic',
     'Io',
     'Terer',
+    'Tle',
   ],
 }
 
