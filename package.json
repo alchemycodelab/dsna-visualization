@@ -75,7 +75,7 @@
     ],
     "overrides": [
       {
-        "files": "**/*.js?(x)",
+        "files": ["**/*.js?(x)", "**/*.ts?(x)"],
         "rules": {
           "import/no-anonymous-default-export": "off"
         }
