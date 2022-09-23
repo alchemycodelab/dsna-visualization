@@ -1,4 +1,5 @@
 import './index.css';
+import './dark-theme.css'
 import './app';
 // import reportWebVitals from './reportWebVitals';
 

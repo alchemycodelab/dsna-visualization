@@ -1,0 +1,8 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --general-background-color: #232323;
+    --general-text-color: #ddd;
+    --link-color: #282;
+    --visited-link-color: #af23af;
+  }
+}
