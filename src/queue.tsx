@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { type FC, type ReactElement } from 'react'
 import buttonFn from './button'
 import buttonStyles from './button.module.css'
 import catImageFn from './cat-image'
@@ -12,6 +12,8 @@ import useCat from './use-cat'
 
 type Props = {}
 
+type Component = FC<Props>
+
 const AddCatButton = buttonFn(buttonStyles['add-cat'])
 const BlendButton = buttonFn(buttonStyles.blend)
 const CatImage = catImageFn(
@@ -22,7 +24,6 @@ const CatQueue = catQueueFn(
   AddCatButton,
   CatImage,
   listStyles['cat-queue'],
-  listItemStyles['cat'],
 )
 const Foods = foodsFn(
   foodImageFn(imageStyles['food-list-item']),
@@ -34,8 +35,8 @@ const forceState = <A,>(set: (a: A) => void, state: A): void => {
 }
 
 
-export default () => {
-  const Queue = (props: Props) => {
+export default (): Component => {
+  const Queue = (props: Props): ReactElement => {
     const {
       addCat,
       cats,

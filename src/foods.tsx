@@ -6,7 +6,12 @@ export type Props = {
   foods: ReadonlyArray<ProcessedFood>,
 }
 
-export default (FoodImage: FoodImageComponent, listClassName: string) => {
+export type Component = FC<Props>
+
+export default (
+  FoodImage: FoodImageComponent,
+  listClassName: string,
+): Component => {
   const Foods = (props: Props): ReactElement => {
     return <ol className={listClassName}>
       {props.foods.map((food) => {

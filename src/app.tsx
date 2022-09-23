@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom/client'
 import {
   // Use HashRouter so we can deploy this statically.
   HashRouter as Router,
+  Link,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
-
 import homeFn from './home'
+import linkStyles from './link.module.css'
 import linkedListFn from './linked-list'
 import queueFn from './queue'
 const Home = homeFn();
@@ -21,9 +21,11 @@ function App(props: {}): ReactElement {
       <Router>
         <header className="App-header">
           <nav>
-            <Link to="/">home</Link>
-            <Link to="/queue">queue</Link>
-            <Link to="/linked-list">linked-list</Link>
+            <Link className={linkStyles['nav-link']} to="/">home</Link>
+            <Link className={linkStyles['nav-link']} to="/queue">queue</Link>
+            <Link className={linkStyles['nav-link']} to="/linked-list">
+              linked-list
+            </Link>
           </nav>
         </header>
         <main>
