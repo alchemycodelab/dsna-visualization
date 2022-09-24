@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.3d1a7ba9.css",
-    "main.js": "./static/js/main.d1ebcbcf.js",
+    "main.css": "./static/css/main.e45519b2.css",
+    "main.js": "./static/js/main.f27c2544.js",
     "static/media/bento.svg": "./static/media/bento.18aa7517b12bebf63c55e3ab392bb0ec.svg",
     "static/media/cat-wikimedia-commons-01.svg": "./static/media/cat-wikimedia-commons-01.03f4ebcfa07e9fcbb6015841ada4c37f.svg",
     "static/media/salad.svg": "./static/media/salad.d228d5a6deac30533d35dba2954a0703.svg",
@@ -17,11 +17,11 @@
     "static/media/meat-on-bone.svg": "./static/media/meat-on-bone.f6d2e7d2c48f886209e2044d48af9a18.svg",
     "static/media/drumstick.svg": "./static/media/drumstick.274d190c1e35abec154d4db39fcc42f5.svg",
     "index.html": "./index.html",
-    "main.3d1a7ba9.css.map": "./static/css/main.3d1a7ba9.css.map",
-    "main.d1ebcbcf.js.map": "./static/js/main.d1ebcbcf.js.map"
+    "main.e45519b2.css.map": "./static/css/main.e45519b2.css.map",
+    "main.f27c2544.js.map": "./static/js/main.f27c2544.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d1a7ba9.css",
-    "static/js/main.d1ebcbcf.js"
+    "static/css/main.e45519b2.css",
+    "static/js/main.f27c2544.js"
   ]
 }
