@@ -503,6 +503,7 @@ module.exports = function (webpackEnv) {
                   : isEnvDevelopment,
                 modules: {
                   mode: 'local',
+                  exportLocalsConvention: 'camelCase',
                   getLocalIdent: getCSSModuleLocalIdent,
                 },
               }),

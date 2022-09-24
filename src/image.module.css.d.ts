@@ -2,7 +2,9 @@
 // Please do not change this file!
 interface CssExports {
   'cat-list-item': string;
+  'catListItem': string;
   'food-list-item': string;
+  'foodListItem': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

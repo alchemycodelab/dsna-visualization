@@ -3,6 +3,8 @@
 interface CssExports {
   'add-cat': string;
   'add-linked-list-event': string;
+  'addCat': string;
+  'addLinkedListEvent': string;
   'blend': string;
 }
 export const cssExports: CssExports;

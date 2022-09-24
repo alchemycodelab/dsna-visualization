@@ -1,9 +1,13 @@
 .cat-list-item {
   height: 75px;
   width: 75px;
+  background-color: var(--tile-background-color);
+  border-radius: 10px;
 }
 
 .food-list-item {
+  background-color: var(--tile-background-color);
+  border-radius: 10px;
   height: 75px;
   width: 75px;
 }

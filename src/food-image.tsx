@@ -7,10 +7,15 @@ export type Props = {
 
 export type Component = FC<Props>
 
-export default (className: string) => {
+export default (imageClassName: string, listItemClassName: string) => {
   const FoodImage = (props: Props): ReactElement => {
-    return <li className={className}>
-      <img alt={props.food.name} src={props.food.image} title={props.food.name} />
+    return <li className={listItemClassName}>
+      <img
+        alt={props.food.name}
+        className={imageClassName}
+        src={props.food.image}
+        title={props.food.name}
+      />
     </li>
   }
   return FoodImage

@@ -7,7 +7,7 @@ export type Props = {}
 export type Component = FC<Props>
 
 export default (): Component => {
-  const AddEventButton = buttonFn(buttonStyles['add-linked-list-event'])
+  const AddEventButton = buttonFn(buttonStyles.addLinkedListEvent)
   const LinkedList = (props: Props): ReactElement => {
     return <section>
       <h2>Behold, the life of a cat.</h2>
@@ -17,7 +17,7 @@ export default (): Component => {
       </ol>
       <form onSubmit={(e) => e.preventDefault()}>
         <h2>Add some cat events.</h2>
-        <AddEventButton onClick={() => {}}>add event</AddEventButton>
+        <AddEventButton onClick={() => {}}>chase dogs</AddEventButton>
       </form>
     </section>
   }
