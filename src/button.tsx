@@ -10,14 +10,12 @@ export type Props = {
 export type Component = FC<Props>
 
 export default (className: string): FC<Props> => {
-    const onMouseOver = props.onMouseOver || (() => {})
-    const onMouseLeave = props.onMouseLeave || (() => {})
   const Button = (props: Props): ReactElement => {
     return <button
       className={className}
       onClick={props.onClick}
-      onMouseOver={onMouseOver}
-      onMouseLeave={onMouseLeave}
+      onMouseOver={props.onMouseOver}
+      onMouseLeave={props.onMouseLeave}
     >
       {props.children}
     </button>
