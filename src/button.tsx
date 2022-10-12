@@ -1,4 +1,4 @@
-import React, { type FC, type ReactNode } from 'react'
+import React, { type FC, type ReactNode, type ReactElement } from 'react'
 
 export type Props = {
   children: ReactNode,
@@ -10,9 +10,9 @@ export type Props = {
 export type Component = FC<Props>
 
 export default (className: string): FC<Props> => {
-  const Button = (props: Props) => {
     const onMouseOver = props.onMouseOver || (() => {})
     const onMouseLeave = props.onMouseLeave || (() => {})
+  const Button = (props: Props): ReactElement => {
     return <button
       className={className}
       onClick={props.onClick}
