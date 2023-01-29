@@ -3,11 +3,11 @@
 // filter: invert(0) sepia(0) saturate(1) hue-rotate(0deg);
 
 import React, { type FC } from 'react'
-import { type QueuedCat } from './use-cat'
+import { type QueueCat } from './use-cat'
 import catSvg from './cat-wikimedia-commons-01.svg'
 
 export type Props = {
-  cat: QueuedCat,
+  cat: QueueCat,
 }
 
 export type Component = FC<Props>

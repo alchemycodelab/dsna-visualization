@@ -3,8 +3,7 @@ import buttonFn from './button'
 import buttonStyles from './button.module.css'
 import catImageFn from './cat-image'
 import catQueueFn from './cat-queue'
-import foodsFn from './foods'
-import foodImageFn from './food-image'
+import processedCatsFn from './processed-cats'
 import imageStyles from './image.module.css'
 import listItemStyles from './list-item.module.css'
 import listStyles from './list.module.css'
@@ -15,7 +14,7 @@ type Props = {}
 type Component = FC<Props>
 
 const AddCatButton = buttonFn(buttonStyles.addCat)
-const BlendButton = buttonFn(buttonStyles.blend)
+const PetButton = buttonFn(buttonStyles.pet)
 const CatImage = catImageFn(
   listItemStyles.cat,
   imageStyles.catListItem,
@@ -25,47 +24,24 @@ const CatQueue = catQueueFn(
   CatImage,
   listStyles.catQueue,
 )
-const Foods = foodsFn(
-  foodImageFn(imageStyles.foodListItem, listItemStyles.food),
-  listStyles.food,
+const ProcessedCats = processedCatsFn(
+  listStyles.processedCats,
 )
 
-const forceState = <A,>(set: (a: A) => void, state: A): void => {
-  set(state)
-}
-
 export default (): Component => {
-  const Queue = (props: Props): ReactElement => {
+  const Queue = (): ReactElement => {
     const {
       addCat,
       cats,
-      setCats,
-      foods,
-      blendHovered,
-      setBlendHovered,
-      nextCatNumber,
-      setNextCatNumber,
-      blendCat,
+      processedCats,
+      petCat,
     } = useCat()
-    const catQueueProps = {
-      addCat,
-      cats,
-      nextCatNumber,
-      setCats,
-      setNextCatNumber,
-    }
     return <>
-      <CatQueue {...catQueueProps} />
+      <CatQueue addCat={addCat} cats={cats} />
       <div style={{display: cats.length > 0 ? 'block' : 'none'}}>
-        <BlendButton
-          onClick={blendCat}
-          onMouseOver={() => forceState(setBlendHovered, true)}
-          onMouseLeave={() => forceState(setBlendHovered, false)}
-        >
-          { blendHovered ? 'blend' : 'pet' } {cats[0]?.name}
-        </BlendButton>
+        <PetButton onClick={petCat}> pet {cats[0]?.name} </PetButton>
       </div>
-      <Foods foods={foods}/>
+      <ProcessedCats cats={processedCats}/>
     </>
   }
   return Queue

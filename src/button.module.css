@@ -19,7 +19,7 @@
   width: var(--button-width);
 }
 
-.blend {
+.pet {
   color: white;
   background-color: darkgreen;
   padding: var(--button-padding);
@@ -29,12 +29,4 @@
   text-transform: var(--button-text-transform);
   min-width: var(--button-width);
   width: var(--button-width);
-}
-
-.blend:hover {
-  background-color: darkred;
-}
-
-.add-linked-list-event {
-
 }

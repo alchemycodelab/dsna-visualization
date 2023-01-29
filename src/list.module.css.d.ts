@@ -3,7 +3,8 @@
 interface CssExports {
   'cat-queue': string;
   'catQueue': string;
-  'food': string;
+  'processed-cats': string;
+  'processedCats': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

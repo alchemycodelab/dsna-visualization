@@ -1,19 +1,11 @@
 import React from 'react'
 import { type Component as ButtonComponent } from './button'
 import { type Component as CatImageComponent } from './cat-image'
-import { type QueuedCat } from './use-cat'
+import { type QueueCat } from './use-cat'
 
 export type Props = {
-  addCat: (
-    setCats: (a: Array<QueuedCat>) => void,
-    setNextCatNumber: (a: number) => void,
-    cats: Array<QueuedCat>,
-    nextCatNumber: number,
-  ) => void,
-  setCats: (a: Array<QueuedCat>) => void,
-  setNextCatNumber: (a: number) => void,
-  cats: Array<QueuedCat>,
-  nextCatNumber: number,
+  addCat: () => void,
+  cats: Array<QueueCat>,
 }
 
 export default (
@@ -24,20 +16,10 @@ export default (
   const CatQueue = (props: Props) => {
     return <section>
       <div>Petting queue!</div>
-      <AddCatButton
-        onClick={
-          props.addCat.bind(
-            null,
-            props.setCats,
-            props.setNextCatNumber,
-            props.cats,
-            props.nextCatNumber,
-          )
-        }
-      >
+      <AddCatButton onClick={props.addCat}>
         add cat
       </AddCatButton>
-        <ol className={listClassName}>
+      <ol className={listClassName}>
         {props.cats.map((cat) => {
           return <CatImage cat={cat} key={cat.number} />
         })}

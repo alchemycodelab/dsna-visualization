@@ -1,30 +1,10 @@
 import { useState } from 'react'
-import baconImage from './bacon.svg'
-import bentoImage from './bento.svg'
-import burritoImage from './burrito.svg'
-import drumstickImage from './drumstick.svg'
-import kebabImage from './kebab.svg'
-import meatOnBoneImage from './meat-on-bone.svg'
-import nigiriImage from './nigiri.svg'
-import pitaImage from './pita.svg'
-import ramenImage from './ramen.svg'
-import saladImage from './salad.svg'
-import soupImage from './soup.svg'
-import steakImage from './steak.svg'
-import stewImage from './stew.svg'
 
-export type ProcessedFood = {
-  flavor: string,
-  id: number,
-  image: string,
-  name: string,
-}
-
-export type QueuedCat = {
+export type QueueCat = {
   colorRotation: number,
   name: string,
-  flavor: string,
   number: number,
+  pets: number,
 }
 
 const randomInt = (max: number): number => {
@@ -36,51 +16,13 @@ const randomElement = <T>(xs: ReadonlyArray<T>): T | undefined => {
 }
 
 type Cattributes = {
-  flavors: ReadonlyArray<string>,
   names: ReadonlyArray<string>,
-  recipes: {[key: string]: string},
 }
 
 /**
  * Attributes for cats! Get it??
  */
 const cattributes: Cattributes = {
-  flavors: [
-    'acidic',
-    'acrid',
-    'bitter',
-    'brackish',
-    'cardboard',
-    'dry',
-    'fruity',
-    'juicy',
-    'mellow',
-    // 'mild',
-    'prickly',
-    'saline',
-    'savory',
-    'sharp',
-    // 'sour',
-    // 'sweet',
-    // 'zesty',
-  ],
-  // This is a flavor-to-food mapping.
-  recipes: {
-    acidic: baconImage,
-    acrid: bentoImage,
-    bitter: burritoImage,
-    brackish: drumstickImage,
-    cardboard: kebabImage,
-    dry: meatOnBoneImage,
-    fruity: nigiriImage,
-    juicy: pitaImage,
-    mellow: ramenImage,
-    // mild: ramenImage,
-    prickly: saladImage,
-    saline: soupImage,
-    savory: steakImage,
-    sharp: stewImage,
-  },
   names: [
     'Aclysm',
     'Acomb',
@@ -91,6 +33,7 @@ const cattributes: Cattributes = {
     'Cher',
     'Egory',
     'Eracts',
+    'Erer',
     'Erpillar',
     'Hardic',
     'Hedral',
@@ -98,64 +41,87 @@ const cattributes: Cattributes = {
     'Hode',
     'Holic',
     'Io',
-    'Terer',
     'Tle',
   ],
 }
 
-
-const addCat = (
-  setCats: (xs: Array<QueuedCat>) => void,
-  setNextCatNumber: (n: number) => void,
-  cats: Array<QueuedCat>,
-  nextCatNumber: number,
-): void => {
-  setCats([...cats].concat([{
+const createCat = (nextCatNumber: number): QueueCat => {
+  return {
     colorRotation: randomInt(360 - 1),
     name: randomElement(cattributes.names) || 'Name not found',
     number: nextCatNumber,
-    flavor: randomElement(cattributes.flavors) || 'Flavor not found',
-  }]))
+    pets: 0,
+  }
+}
+
+const availableCat = (
+  processedCats: ReadonlyArray<QueueCat>,
+): QueueCat | null | undefined => {
+  return processedCats.length > 0
+    ? randomElement(processedCats)
+    : null
+}
+
+// Mostly because TypeScript can't do more than 4-5 arguments with bind out of
+// the box...
+type CatSetters = {
+  setCats: (xs: Array<QueueCat>) => void,
+  setProcessedCats: (xs: Array<QueueCat>) => void,
+  setNextCatNumber: (n: number) => void,
+}
+
+const addCat = (
+  { setCats, setProcessedCats, setNextCatNumber }: CatSetters,
+  nextCatNumber: number,
+  cats: Array<QueueCat>,
+  processedCats: ReadonlyArray<QueueCat>,
+): void => {
+  const catToEnqueue = availableCat(processedCats) || createCat(nextCatNumber)
+  setProcessedCats(processedCats.filter(cat => cat.name !== catToEnqueue.name))
+  setCats(cats.concat([catToEnqueue]))
   setNextCatNumber(nextCatNumber + 1)
 }
 
-const toFood = (cat: QueuedCat): ProcessedFood => {
+export const processCat = (cat: QueueCat): QueueCat => {
   return {
-    flavor: cat.flavor,
-    id: cat.number,
-    image: cattributes.recipes[cat.flavor] || 'whoops',
-    name: 'grilled ' + cat.name,
+    ...cat,
+    pets: cat.pets + 1,
   }
 }
 
-export const defaultCat = (): QueuedCat => {
+export const defaultCat = (): QueueCat => {
   return {
     colorRotation: 0,
-    flavor: 'No flavor',
     name: 'Cat not found',
     number: -1,
+    pets: 0,
   }
 }
+
 
 export default function useCat() {
   const [nextCatNumber, setNextCatNumber] = useState(0)
-  const [cats, setCats] = useState<Array<QueuedCat>>([])
-  const [foods, setFoods] = useState<Array<ProcessedFood>>([])
-  const [blendHovered, setBlendHovered] = useState(false)
-  const blendCat = () => {
+  const [cats, setCats] = useState<Array<QueueCat>>([])
+  const [processedCats, setProcessedCats] = useState<Array<QueueCat>>([])
+  const petCat = () => {
     const cat = cats.shift() || defaultCat()
     setCats(cats)
-    setFoods([...foods].concat(toFood(cat)))
+    setProcessedCats([...processedCats].concat(processCat(cat)))
   }
   return {
-    addCat,
+    addCat: addCat.bind(
+      null,
+      {
+        setCats,
+        setNextCatNumber,
+        setProcessedCats,
+      },
+      nextCatNumber,
+      cats,
+      processedCats,
+    ),
     cats,
-    setCats,
-    foods,
-    blendHovered,
-    setBlendHovered,
-    nextCatNumber,
-    setNextCatNumber,
-    blendCat,
+    processedCats,
+    petCat,
   }
 }
